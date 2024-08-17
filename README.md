@@ -5,7 +5,8 @@ Installation:
 pip install jazzy-timer
 ```
 
-*Part of the "jazzy" utilities series by Edward Jazzhands.*
+*#1 in the "jazzy" utilities series by Edward Jazzhands.*
+*Currently the only one in the series. More to come...*
 
 A very simple timer that will return a tuple consisting of:
 1) The result of the function call
