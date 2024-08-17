@@ -64,7 +64,7 @@ Result of function call: ('some result', 33) | Elapsed time: 0.5436 seconds
 ```
 In this scenario, simply unpack the nested tuple in a separate step.
 
-Thats it! There's nothing else to memorize.
+Thats it! There's nothing else to memorize. There's also no dependencies, it only uses standard library.
 
 *All utilities in the "jazzy" series follow the Radical Simplicity design philosophy.*
 
