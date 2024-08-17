@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "jazzy-timer"
+version = "0.1.0"
+description = "An ultra-simple timer decorator, part of the jazzy utilities series."
+authors = ["Edward Jazzhands <ed.jazzhands@gmail.com>"]
+homepage = "https://github.com/edward-jazzhands/jazzy-timer"
+license = "MIT"
+readme = "README.md"
+keywords = ["timer", "timing", "decorator", "profiling", "performance", "benchmark", "jazzy"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
