@@ -1,11 +1,25 @@
-""" __init__.py for jazzy-timer. Contains the timer decorator. """
+""" \_\_init__.py for jazzy-timer. Contains the timer decorator.
 
+## To use:
+
+--------------------
+from jazzy-timer import timer   
+
+@timer   
+def my_function():   
+    # define function here   
+    return result
+
+result, elapsed_time = my_function()
+
+---------------------
+### Note that the result and the elapsed time are returned as a tuple. Once the decorator is added, you must unpack the tuple or you will get an error.
+
+"""
 
 import time
 from functools import wraps
 from typing import *
-import logging
-logging.basicConfig(level=logging.INFO)
 
 def timer(func = None, *, precision: int = 4) -> Callable[..., tuple[Any, float]]:
     """A decorator that times the execution of a function.
@@ -14,6 +28,19 @@ def timer(func = None, *, precision: int = 4) -> Callable[..., tuple[Any, float]
     
     :return Callable[..., tuple[Any, float]]: A wrapped function that returns a tuple containing 
     the result of the function and the elapsed time in seconds.
+
+    ```
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        elapsed_time = round(elapsed_time, precision)
+        return result, elapsed_time
+    return wrapper
+    ```
+
     """
 
     def decorator(func):
@@ -39,6 +66,9 @@ def timer(func = None, *, precision: int = 4) -> Callable[..., tuple[Any, float]
 
 
 if __name__ == "__main__":
+
+    import logging
+    logging.basicConfig(level=logging.INFO)
 
     @timer
     def test_function(time_to_sleep):
